@@ -167,9 +167,8 @@ function Login() {
     }, []);
 
     useEffect(() => {
+        setIsLoading(true)
         if (isAuthenticated) {
-            setEmail(user.email);
-            setPassword(user.nickname);
             const requestData = {
                 fullName: user.name,
                 email: user.email,
@@ -183,6 +182,9 @@ function Login() {
                             icon: 'success',
                             title: 'User successfully registered'
                         });
+                        setEmail(user.email);
+                        setPassword(user.nickname);
+                        setIsLoading(false)
                     }
                 })
                 .catch((error) => {
