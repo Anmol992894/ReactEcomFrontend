@@ -184,7 +184,7 @@ function Login() {
                         });
                         setEmail(user.email);
                         setPassword(user.nickname);
-                        setIsLoading(false)
+                        setLoading(false)
                     }
                 })
                 .catch((error) => {
