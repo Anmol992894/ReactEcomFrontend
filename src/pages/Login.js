@@ -167,8 +167,8 @@ function Login() {
     }, []);
 
     useEffect(() => {
-        setLoading(true)
         if (isAuthenticated) {
+            setLoading(true)
             const requestData = {
                 fullName: user.name,
                 email: user.email,
