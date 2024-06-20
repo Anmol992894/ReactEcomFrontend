@@ -185,6 +185,7 @@ function Login() {
                         setEmail(user.email);
                         setPassword(user.nickname);
                         setLoading(false)
+                        loginUserWithEmail();
                     }
                 })
                 .catch((error) => {
