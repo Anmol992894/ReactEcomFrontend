@@ -192,6 +192,8 @@ function Login() {
                     if (error.response?.status === 500 && error.response?.data?.error === "User with this email already registered") {
                         setEmail(user.email);
                         setPassword(user.nickname);
+                        setLoading(false)
+
                     } else {
                         console.error(error);
                         Swal.fire({
