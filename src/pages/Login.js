@@ -188,11 +188,10 @@ function Login() {
                         loginUserWithEmail();
                     }
                 })
-                .catch((error) => {
+                .catch(async(error) => {
                     if (error.response?.status === 500 && error.response?.data?.error === "User with this email already registered") {
                         setEmail(user.email);
                         setPassword(user.nickname);
-                        loginUserWithEmail();
                     } else {
                         console.error(error);
                         Swal.fire({
